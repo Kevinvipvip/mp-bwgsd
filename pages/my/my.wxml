@@ -1,0 +1,134 @@
+<view class="page">
+  <!-- 用户信息 -->
+  <view class="user-box">
+    <image src="{{user.avatar}}" class="header"></image>
+    <view class="info">
+      <view class="title-line">
+        <button bindgetuserinfo="auth" open-type="getUserInfo" class="auth" wx:if="{{user.user_auth == 0}}">点击授权</button>
+        <view class="nickname one-line-ellipsis" wx:else>{{user.nickname}}</view>
+<!--        <view class="is-vip">VIP</view>-->
+      </view>
+<!--      <view class="vip-text">已成为会员</view>-->
+    </view>
+
+    <button bindgetuserinfo="auth" open-type="getUserInfo" class="share" wx:if="{{user_auth == 0}}">
+      <image src="/icons/user.png"></image>
+      <view class="text">分享</view>
+    </button>
+    <button bindtap="show_poster" class="share" wx:else>
+      <image src="/icons/user.png"></image>
+      <view class="text">分享</view>
+    </button>
+  </view>
+
+  <!-- vip信息 -->
+<!--  <view class="vip-box">-->
+<!--    <view class="left">-->
+<!--      <image src="/images/vip.png" class="vip-img"></image>-->
+<!--      <view class="expires">您的会员已开通，还有248天到期</view>-->
+<!--    </view>-->
+<!--    <button class="kai">立即续费</button>-->
+<!--  </view>-->
+
+  <!-- 我的订单 -->
+  <view class="order-box">
+    <view class="top-line">
+      <view class="title">我的订单</view>
+      <navigator url="/pages/my-orders/my-orders" class="all">
+        <view class="zi">全部订单</view>
+        <image src="/icons/right-arrow.png"></image>
+      </navigator>
+    </view>
+    <view class="o-menus">
+      <navigator url="/pages/my-orders/my-orders?status=0" class="o-menu">
+        <image src="/icons/os1.png" class="icon"></image>
+        <view class="explain">待付款</view>
+      </navigator>
+      <navigator url="/pages/my-orders/my-orders?status=1" class="o-menu">
+        <image src="/icons/os2.png" class="icon"></image>
+        <view class="explain">待发货</view>
+      </navigator>
+      <navigator url="/pages/my-orders/my-orders?status=2" class="o-menu">
+        <image src="/icons/os3.png" class="icon"></image>
+        <view class="explain">待收货</view>
+      </navigator>
+      <navigator url="/pages/my-orders/my-orders?status=3" class="o-menu">
+        <image src="/icons/os4.png" class="icon"></image>
+        <view class="explain">已完成</view>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 我的服务 -->
+  <view class="menu-box">
+    <view class="title">我的服务</view>
+    <view class="menu-list">
+<!--      <navigator url="/pages/my-orders/my-orders" class="menu">-->
+<!--        <image src="/icons/collect.png" class="icon"></image>-->
+<!--        <view class="text">收藏夹</view>-->
+<!--      </navigator>-->
+      <navigator url="/pages/my-address/my-address" class="menu">
+        <image src="/icons/address.png" class="icon"></image>
+        <view class="text">收货地址</view>
+      </navigator>
+      <button open-type="contact" class="menu">
+        <image src="/icons/kefu.png" class="icon"></image>
+        <view class="text">在线客服</view>
+      </button>
+      <navigator url="/pages/refund-list/refund-list" class="menu">
+        <image src="/icons/dollar.png" class="icon"></image>
+        <view class="text">售后</view>
+      </navigator>
+      <view class="menu vh"></view>
+<!--      <navigator url="/pages/poster/poster" class="menu">-->
+<!--        <image src="/icons/daiyan.png" class="icon"></image>-->
+<!--        <view class="text">我的代言</view>-->
+<!--      </navigator>-->
+    </view>
+  </view>
+
+  <view class="goods-box">
+    <view class="title">为您推荐</view>
+    <view class="goods-list">
+      <navigator url="/pages/shop-detail/shop-detail?id={{item.id}}" class="goods" wx:for="{{goods_list}}">
+        <image src="{{item.pics[0]}}" class="cover"></image>
+        <view class="info">
+          <view class="title one-line-ellipsis">{{item.name}}</view>
+          <view class="shop one-line-ellipsis">{{item.museum_name}}</view>
+          <view class="desc one-line-ellipsis">{{item.desc}}</view>
+          <view class="price">{{item.price}}</view>
+        </view>
+      </navigator>
+    </view>
+    <!-- nomore/nodata -->
+    <view class="nomore" wx:if="{{nomore}}">
+      已经没有更多了哦
+    </view>
+    <view class="nodata" wx:if="{{nodata}}">
+      暂无商品
+    </view>
+  </view>
+
+  <!-- 海报需要 -->
+  <canvas canvas-id="poster-canvas" class="canvas poster-canvas"></canvas>
+
+  <view class="modal-wrapper" wx:if="{{poster_show}}">
+    <view class="modal poster-modal">
+      <view bindtap="hide_poster" class="close">
+        <image src="/icons/delete.png"></image>
+      </view>
+
+      <image src="{{poster}}" class="poster-img"></image>
+      <button catchtap="save_poster" class="save-btn">保存</button>
+    </view>
+  </view>
+
+  <view bindtap="hide_set_btn" class="setting-box" wx:if="{{show_set_btn}}">
+    <view class="os-box">
+      <view>
+        请在设置中打开保存图片到相册的权限
+      </view>
+      <button catchtap="hide_set_btn" open-type="openSetting" class="set_btn">打开设置</button>
+    </view>
+  </view>
+</view>

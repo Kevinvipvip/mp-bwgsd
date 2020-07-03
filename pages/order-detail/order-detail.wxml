@@ -1,0 +1,162 @@
+<view class="full-loading" wx:if="{{full_loading}}">
+  <view class="image"></view>
+</view>
+
+<view class="page">
+  <!-- 状态栏 -->
+  <view class="status">
+    <view class="bg"></view>
+<!--    <image src="/images/order-status-bg.jpg" class="bg"></image>-->
+
+    <view class="text-box">
+      <block wx:if="{{order.status == 0}}">
+        <view class="title">待付款</view>
+        <view class="desc">这份订单还未支付，赶快去支付吧~</view>
+      </block>
+      <block wx:if="{{order.status == 1}}">
+        <view class="title">待发货</view>
+        <view class="desc">您的订单正在配货中，请您耐心等待~</view>
+      </block>
+      <block wx:if="{{order.status == 2}}">
+        <view class="title">待收货</view>
+        <view class="desc">您的订单正在送往指定目的地，请注意签收~</view>
+      </block>
+      <block wx:if="{{order.status == 3}}">
+        <view class="title">已完成</view>
+        <view class="desc">本次订单已完成，期待再次为您服务~</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 商品 -->
+  <view class="pro-list">
+    <view class="pro" wx:for="{{order.child}}" wx:key="order_detail_id">
+      <navigator url="/pages/shop-detail/shop-detail?id={{item.goods_id}}" class="pro-main">
+        <image src="{{item.cover}}" class="cover"></image>
+        <view class="info">
+          <view class="shang">
+            <view class="title two-line-ellipsis">{{item.goods_name}}</view>
+            <view class="attr one-line-ellipsis">{{item.attr}}</view>
+          </view>
+          <view class="xia">
+            <view class="price">{{item.unit_price}}</view>
+            <view class="amount">
+              <image src="/icons/cha.png" class="times"></image>
+              <view class="num">{{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="btn-box" wx:if="{{order.status == 3 && item.evaluate == 0}}">
+        <button bindtap="show_comment" data-active_odi="{{item.order_detail_id}}" class="com-btn">评论</button>
+      </view>
+      <view class="comment" wx:if="{{order.status == 3 && item.evaluate == 1}}">{{item.comment}}</view>
+    </view>
+  </view>
+
+  <!-- 商品金额、运费、总计 -->
+  <view class="multi-price">
+    <view class="price-box1">
+      <view class="label">商品金额</view>
+      <view class="price">{{order.total_price - order.carriage}}</view>
+    </view>
+    <view class="price-box1">
+      <view class="label">运费</view>
+      <view class="price">{{order.carriage}}</view>
+    </view>
+    <view class="price-box2">
+      <view class="label">总计</view>
+      <view class="price">{{order.total_price}}</view>
+    </view>
+  </view>
+
+  <view class="statistics">
+    <view class="line">
+      <view class="label">订单编号</view>
+      <view class="right">
+        <view class="value">{{order.pay_order_sn}}</view>
+        <button bindtap="copy" data-text="{{order.pay_order_sn}}" class="copy">复制</button>
+      </view>
+    </view>
+    <view class="line">
+      <view class="label">下单时间</view>
+      <view class="right">
+        <view class="value">{{order.create_time}}</view>
+      </view>
+    </view>
+    <view class="line" wx:if="{{order.status > 0}}">
+      <view class="label">支付时间</view>
+      <view class="right">
+        <view class="value">{{order.pay_time}}</view>
+      </view>
+    </view>
+    <view class="line" wx:if="{{order.tracking_name}}">
+      <view class="label">配送方式</view>
+      <view class="right">
+        <view class="value">{{order.tracking_name}}</view>
+      </view>
+    </view>
+    <view class="line" wx:if="{{order.tracking_num}}">
+      <view class="label">物流编号</view>
+      <view class="right">
+        <view class="value">{{order.tracking_num}}</view>
+        <button bindtap="copy" data-text="{{order.tracking_num}}" class="copy">复制</button>
+      </view>
+    </view>
+    <view class="line address">
+      <view class="label">详细地址</view>
+      <view class="right">
+        <view class="value">{{order.address}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="foot-btn-box">
+    <block wx:if="{{order.status == 0}}">
+      <button catchtap="orderCancel" data-order="{{item}}">取消订单</button>
+      <button catchtap="orderSnPay" class="highlight" data-order="{{item}}">付款</button>
+    </block>
+
+    <block wx:if="{{order.status == 1}}">
+      <button catchtap="refund_click" data-order="{{item}}">退款</button>
+    </block>
+
+    <block wx:if="{{order.status == 2 || order.status == 3}}">
+      <button catchtap="to_logistics" data-id="{{item.id}}">查看物流</button>
+    </block>
+
+    <block wx:if="{{order.status == 2}}">
+      <button catchtap="orderConfirm" data-order="{{item}}" class="highlight">确认收货</button>
+    </block>
+  </view>
+
+  <!-- 评论modal -->
+  <view bindtap="hide_comment" catchtouchmove class="cu-modal {{show_comment ? 'show' : ''}}" wx:if="{{show_comment}}">
+    <view catchtap class="cu-dialog rmodal">
+      <view class="title">清输入评论</view>
+      <view class="form">
+        <textarea fixed bindinput="bind_input" data-name="comment" value="{{comment}}" auto-height maxlength="100" cursor-spacing="50" placeholder="评论内容..." class="{{is_ios ? 'text-plat-ios' : 'text-plat'}}" />
+        <view class="count">{{comment.length}} / 100</view>
+      </view>
+      <view class="btn-box">
+        <button bindtap="hide_comment" class="cancel">取消</button>
+        <button bindtap="orderEvaluate" class="confirm">确定</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 退款modal -->
+  <view bindtap="hide_refund" catchtouchmove class="cu-modal {{refund_show ? 'show' : ''}}" wx:if="{{refund_show}}">
+    <view catchtap class="cu-dialog rmodal">
+      <view class="title">退款理由</view>
+      <view class="form">
+        <textarea fixed bindinput="bind_input" data-name="reason" value="{{reason}}" auto-height maxlength="100" cursor-spacing="50" placeholder="备注内容..." class="{{is_ios ? 'text-plat-ios' : 'text-plat'}}" />
+        <view class="count">{{reason.length}} / 100</view>
+      </view>
+      <view class="btn-box">
+        <button bindtap="hide_refund" class="cancel">取消</button>
+        <button bindtap="refundApply" class="confirm">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

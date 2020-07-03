@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/auth/auth",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/type-goods-list/type-goods-list",
+    "pages/bwg-goods-list/bwg-goods-list",
+    "pages/cate/cate",
+    "pages/shop-car/shop-car",
+    "pages/shop-detail/shop-detail",
+    "pages/active-detail/active-detail",
+    "pages/cart-order-create/cart-order-create",
+    "pages/my-orders/my-orders",
+    "pages/order-create/order-create",
+    "pages/order-detail/order-detail",
+    "pages/address-detail/address-detail",
+    "pages/refund-list/refund-list",
+    "pages/logistics/logistics",
+    "pages/my-address/my-address",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundColor": "#fcfafa",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#475a84",
+    "navigationBarTitleText": "博物馆商店",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#475a84",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "icons/cate.png",
+        "selectedIconPath": "icons/cate-active.png"
+      },
+      {
+        "pagePath": "pages/shop-car/shop-car",
+        "text": "购物车",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

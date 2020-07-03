@@ -1,0 +1,351 @@
+.page {
+}
+
+.search-box {
+  padding: 24rpx 19rpx;
+  background: #475a84;
+}
+
+.search-box .white-box {
+  padding: 18rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.search-box .icon {
+  width: 26rpx;
+  height: 25rpx;
+  margin-right: 14rpx;
+  flex-shrink: 0;
+}
+
+.search-box .search {
+  flex-grow: 1;
+  color: #999;
+  font-size: 26rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+}
+
+.banner {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.banner .wx-swiper-dot {
+  background: #214e77;
+  opacity: 0.4;
+}
+
+.banner .wx-swiper-dot-active {
+  opacity: 1;
+}
+
+.banner swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+.banner swiper-item image {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.king-kong {
+  margin: 24rpx 24rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.king-kong .kong:nth-child(-n + 4) {
+  margin-top: 0;
+}
+
+.king-kong .kong {
+  margin-top: 40rpx;
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.king-kong .kong image {
+  width: 100rpx;
+  height: 100rpx;
+  background: #f5f5fa;
+  border-radius: 50%;
+}
+
+.king-kong .kong .title {
+  margin-top: 18rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.video {
+  margin: 40rpx 24rpx 24rpx;
+  width: 702rpx;
+  height: 350rpx;
+  display: block;
+  border-radius: 10rpx;
+}
+
+.youhui-box {
+  margin: 45rpx 24rpx 0;
+}
+
+.youhui-box .title-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.youhui-box .title-line .title {
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #333;
+  letter-spacing: 2rpx;
+}
+
+.youhui-box .title-line .more {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0 0 10rpx;
+}
+
+.youhui-box .title-line .more .text {
+  font-size: 24rpx;
+  color: #666;
+  margin-right: 8rpx;
+}
+
+.youhui-box .title-line .more .you {
+  width: 14.4rpx;
+  height: 22.4rpx;
+  position: relative;
+  top: -1rpx;
+}
+
+.youhui-box .youhui-list {
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.youhui-box .youhui-list .youhui:first-child {
+  margin-top: 0;
+}
+
+.youhui-box .youhui-list .youhui {
+  margin-top: 40rpx;
+  display: flex;
+}
+
+.youhui .img {
+  flex-shrink: 0;
+  width: 324rpx;
+  height: 324rpx;
+  box-sizing: border-box;
+  padding: 12rpx;
+  position: relative;
+}
+
+.youhui .img .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youhui .img .goods {
+  width: 100%;
+  height: 100%;
+}
+
+.youhui .info {
+  flex-grow: 1;
+  margin-left: 24rpx;
+  width: 0;
+}
+
+.youhui .info .cate {
+  margin-top: 24rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.youhui .info .title {
+  margin-top: 29rpx;
+}
+
+.youhui .info .title .shop {
+  display: inline-block;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 20rpx;
+  font-size: 20rpx;
+  color: #fff;
+  margin-right: 16rpx;
+  background: #ff3f3f;
+}
+
+.youhui .info .title .name {
+  line-height: 42rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.youhui .info .hui-price {
+  margin-top: 37rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 31rpx;
+  height: 60rpx;
+}
+
+.youhui .info .hui-price .hui-bg {
+  width: 100%;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.youhui .info .hui-price .price::before {
+  content: '￥';
+  font-size: 24rpx;
+  margin-right: 5rpx;
+}
+
+.youhui .info .hui-price .price {
+  position: relative;
+  z-index: 1;
+  font-size: 34rpx;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.youhui .info .origin-price {
+  margin-top: 11rpx;
+  text-align: right;
+  padding-right: 31rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.youhui .info .origin-price .label {
+}
+
+.youhui .info .origin-price .price {
+  text-decoration: line-through;
+}
+
+.goods-box {
+  background: #f5f5fa;
+  padding: 59rpx 24rpx 0;
+}
+
+.goods-box .title-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.goods-box .title-line .title {
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #333;
+  letter-spacing: 2rpx;
+}
+
+.goods-box .title-line .more {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0 0 10rpx;
+}
+
+.goods-box .title-line .more .text {
+  font-size: 24rpx;
+  color: #666;
+  margin-right: 8rpx;
+}
+
+.goods-box .title-line .more .you {
+  width: 14.4rpx;
+  height: 22.4rpx;
+  position: relative;
+  top: -1rpx;
+}
+
+.goods-box .goods-list {
+  margin-top: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.goods-box .goods-list .goods {
+  margin-right: 22rpx;
+  width: 340rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-top: 22rpx;
+}
+
+.goods-box .goods-list .goods:nth-child(-n + 2) {
+  margin-top: 0;
+}
+
+.goods-box .goods-list .goods:nth-child(2n) {
+  margin-right: 0;
+}
+
+.goods .cover {
+  width: 340rpx;
+  height: 340rpx;
+  vertical-align: bottom;
+}
+
+.goods .info {
+  background: #fff;
+  padding: 24rpx 22rpx 36rpx;
+}
+
+.goods .info .title {
+  font-size: 34rpx;
+  color: #333;
+}
+
+.goods .info .shop {
+  margin-top: 17rpx;
+  padding: 8rpx 20rpx;
+  background: #ff3f3f;
+  font-size: 20rpx;
+  color: #fff;
+  display: inline-block;
+}
+
+.goods .info .desc {
+  margin-top: 17rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.goods .info .price::before {
+  content: '￥';
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 5rpx;
+}
+
+.goods .info .price {
+  margin-top: 27rpx;
+  font-size: 36rpx;
+  color: #ff3f3f;
+}

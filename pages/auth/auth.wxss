@@ -1,0 +1,24 @@
+.auth-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.auth-box image {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.auth-box .auth-btn {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1;
+    opacity:0;
+    width:100vw;
+    height:100vh;
+    box-sizing:border-box;
+}

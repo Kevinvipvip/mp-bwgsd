@@ -1,0 +1,95 @@
+<view class="full-loading" wx:if="{{full_loading}}">
+	<view class="image"></view>
+</view>
+
+<view class="page">
+	<!-- 搜索框 -->
+	<view class="search-box">
+		<view bindtap="to_search" class="white-box">
+			<image bindtap="to_search" src="/icons/zoom.png" class="icon"></image>
+			<view class="search">搜索商品</view>
+		</view>
+	</view>
+
+	<!-- banner 轮播图 -->
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="banner">
+		<swiper-item wx:for="{{slide_list}}" wx:key="id">
+			<image bindtap="jump" data-url="{{item.url}}" src="{{item.pic}}"></image>
+		</swiper-item>
+	</swiper>
+
+	<!-- 金刚区 -->
+	<view class="king-kong">
+		<view bindtap="to_cate" data-cate_id="{{item.id}}" class="kong" wx:for="{{cate_list}}" wx:key="id">
+			<image src="{{item.icon}}"></image>
+			<view class="title">{{item.cate_name}}</view>
+		</view>
+	</view>
+
+	<!-- 会员广告 -->
+	<video src="{{video_list.video_url}}" class="video" poster="{{video_list.poster}}" controls object-fit="cover"></video>
+
+	<!-- 新品限时 -->
+	<view class="youhui-box">
+		<view class="title-line">
+			<view class="title">新品限时</view>
+			<navigator url="/pages/type-goods-list/type-goods-list?type=1" class="more">
+				<view class="text">更多</view>
+				<image src="/icons/icon_right_arrow2.png" class="you"></image>
+			</navigator>
+		</view>
+		<view class="youhui-list">
+			<navigator url="/pages/shop-detail/shop-detail?id={{item.id}}" class="youhui" wx:for="{{xinpin_list}}" wx:key="id">
+				<view class="img">
+					<image src="/images/list-bg.png" class="bg"></image>
+					<image src="{{item.pics[0]}}" class="goods"></image>
+				</view>
+				<view class="info">
+					<view class="cate one-line-ellipsis">{{item.name}}</view>
+					<!--          <view class="cate one-line-ellipsis">{{item.cate_name}}</view>-->
+					<view class="title two-line-ellipsis">
+						<text class="shop">{{item.museum_name}}</text>
+						<text class="name">{{item.desc}}</text>
+					</view>
+					<view class="hui-price">
+						<image src="/images/time-limit.png" class="hui-bg"></image>
+						<view class="price">{{item.price}}</view>
+					</view>
+					<view class="origin-price">
+						<text class="label">恢复价</text>
+						<text class="price">{{item.origin_price}}</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 尖货推荐 -->
+	<view class="goods-box">
+		<view class="title-line">
+			<view class="title">尖货推荐</view>
+			<!--      <navigator url="/pages/type-goods-list/type-goods-list?type=2" class="more">-->
+			<!--        <view class="text">更多</view>-->
+			<!--        <image src="/icons/icon_right_arrow2.png" class="you"></image>-->
+			<!--      </navigator>-->
+		</view>
+		<view class="goods-list">
+			<navigator url="/pages/shop-detail/shop-detail?id={{item.id}}" class="goods" wx:for="{{jianhuo_list}}" wx:key="id">
+				<image src="{{item.pics[0]}}" class="cover"></image>
+				<view class="info">
+					<view class="title one-line-ellipsis">{{item.name}}</view>
+					<view class="shop one-line-ellipsis">{{item.museum_name}}</view>
+					<view class="desc one-line-ellipsis">{{item.desc}}</view>
+					<view class="price">{{item.price}}</view>
+				</view>
+			</navigator>
+		</view>
+		<!-- nomore/nodata -->
+		<view class="nomore" wx:if="{{nomore}}">
+			已经没有更多了哦
+		</view>
+		<view class="nodata" wx:if="{{nodata}}">
+			暂无数据
+		</view>
+	</view>
+</view>

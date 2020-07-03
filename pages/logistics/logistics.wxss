@@ -1,0 +1,125 @@
+.page {
+  box-sizing: border-box;
+  background: #fff;
+  min-height: 100vh;
+  padding-bottom: 50rpx;
+}
+
+.page_row {
+  display: flex;
+  padding: 30rpx 50rpx;
+  align-items: center;
+}
+
+.huo {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 15rpx;
+  flex-shrink: 0;
+  transform: rotateY(180deg);
+}
+
+.logistics {
+  font-size: 28rpx;
+  margin-left: 23rpx;
+  line-height: 1.7;
+  color: #333;
+}
+
+.logistics text {
+  display: block;
+}
+
+.br {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 30rpx;
+  background: #d0d0d0;
+  height: 2rpx;
+}
+
+/* 下部分 */
+
+.trace {
+  display: flex;
+  padding: 0 30rpx;
+}
+
+.trace:first-child .logistics_centent {
+  margin-top: 20rpx;
+}
+
+.trace:last-child .logistics_centent {
+  margin-bottom: 10rpx;
+}
+
+.trace .zuo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.trace .zuo .on {
+  flex-grow: 1;
+}
+
+.logistics_centent {
+  font-size: 26rpx;
+  color: #666;
+  margin-left: 28rpx;
+  margin-bottom: 35rpx;
+}
+
+.logistics_centent text {
+  display: block;
+  line-height: 1.4;
+}
+
+.logistics_centent .time {
+  color: #888;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.icon {
+  width: 20rpx;
+  height: 20rpx;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.last {
+  width: 25rpx;
+  height: 25rpx;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  border: 4rpx solid #d0d0d0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: -3rpx;
+}
+
+.in {
+  border: 2rpx solid #3c77f3;
+  animation: my_animation 2s infinite;
+}
+
+@keyframes my_animation {
+  100% {
+    transform: scale(1.5);
+    background-color: transparent;
+  }
+}
+
+.no_in {
+  border: 2rpx solid #d0d0d0;
+}
+
+.on {
+  background: #d0d0d0;
+  width: 1px;
+}

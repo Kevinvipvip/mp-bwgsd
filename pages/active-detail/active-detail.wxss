@@ -1,0 +1,178 @@
+.banner image,
+.title image {
+    width: 100%;
+    display: block;
+}
+
+.shop-suit-box {
+    background: rgb(255, 230, 188);
+}
+
+.shop-suit-box .shop-suit {
+    margin: 0 25rpx;
+    background: rgb(255, 249, 239);
+    box-shadow: 3px 0px 4px rgba(230, 166, 117, 0.75);
+}
+
+.shop-suit-box .shop-suit .shop-suit-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 40rpx 30rpx;
+    border-bottom: 2rpx dotted #fbe3b9;
+}
+
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box {
+    width: calc(50% - 16rpx);
+    border-radius: 5rpx;
+    overflow: hidden;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box image {
+    width: 308rpx;
+    height: 308rpx;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .item-title {
+    width: 100%;
+    height: 105rpx;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .item-title image {
+    width: 100%;
+    display: block;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-name {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 34rpx;
+    margin-top: 35rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-price {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20rpx;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-price .price {
+    font-size: 39rpx;
+    color: #db4642;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-price .price b {
+    font-size: 34rpx;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-price .or-price {
+    font-size: 24rpx;
+    color: #b3b3b3;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+}
+/*.shop-suit-box .shop-suit .shop-suit-item .cont-box .shop-price .or-price b{*/
+    /*display: inline-block;*/
+    /*text-decoration: line-through;*/
+    /*width: 20rpx;*/
+/*}*/
+
+.shop-suit-box .shop-suit .shop-suit-item .image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-suit-box .shop-suit .shop-suit-item .cont-box .btn-now-buy {
+    background-color: #dc4547;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140rpx;
+    height: 38rpx;
+    color: #fff;
+    font-size: 24rpx;
+    margin-top: 27rpx;
+    border-radius: 20rpx;
+}
+
+/*组合套装end*/
+
+/*其他推荐start*/
+.recommend-box {
+    padding: 25rpx 25rpx 0;
+    background-color: rgb(245, 199, 132);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.recommend-box:before {
+    position: absolute;
+    content: '';
+    height: 2rpx;
+    top: -2rpx;
+    left: 0;
+    right: 0;
+    background-color: rgb(245, 199, 132);
+}
+
+.recommend-box .recommend-item {
+    width: calc(50% - 12rpx);
+    background-color: rgb(255, 249, 239);
+    margin-bottom: 24rpx;
+    border-radius: 4rpx;
+    overflow: hidden;
+}
+
+.recommend-box .recommend-item .pic-box image {
+    display: block;
+    width: 100%;
+}
+
+.recommend-box .recommend-item .cont-box {
+    margin: 0 13rpx 40rpx;
+}
+
+.recommend-box .recommend-item .cont-box .shop-name {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 34rpx;
+    margin-top: 20rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.recommend-box .recommend-item .cont-box .shop-price {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20rpx;
+}
+
+.recommend-box .recommend-item .cont-box .shop-price .price {
+    font-size: 39rpx;
+    color: #db4642;
+}
+
+.recommend-box .recommend-item .cont-box .shop-price .price b {
+    font-size: 34rpx;
+}
+
+.recommend-box .recommend-item .cont-box .shop-price .or-price {
+    font-size: 24rpx;
+    color: #b3b3b3;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+}
+/*.recommend-box .recommend-item .cont-box .shop-price .or-price b{*/
+    /*display: inline-block;*/
+    /*text-decoration: line-through;*/
+    /*width: 20rpx;*/
+/*}*/
