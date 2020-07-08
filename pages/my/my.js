@@ -65,7 +65,7 @@ Page({
   guessYouLikeList() {
     app.ajax('my/guessYouLikeList', null, res => {
       for (let i = 0; i < res.length; i++) {
-        app.img_format(res[i].pics);
+        app.qiniu_format(res[i].pics);
       }
       this.setData({ goods_list: res });
     });
@@ -83,7 +83,7 @@ Page({
 
     let promise2 = new Promise((resolve) => {
       app.ajax('api/getQrcode', null, res => {
-        res = app.img_format(res);
+        res = app.qiniu_format(res);
         wx.getImageInfo({
           src: res,
           success: res => {

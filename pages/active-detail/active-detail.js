@@ -31,7 +31,7 @@ Page({
         title: res.title
       });
       for (let i = 0; i < res.list.length; i++) {
-        app.img_format(res.list[i].pics);
+        app.qiniu_format(res.list[i].pics);
       }
       this.setData({
         active_detail: res
@@ -49,7 +49,7 @@ Page({
   guessYouLikeList(complete) {
     app.ajax('my/guessYouLikeList', {}, (res) => {
       for (let i = 0; i < res.length; i++) {
-        app.img_format(res[i].pics);
+        app.qiniu_format(res[i].pics);
       }
       this.setData({
         recommend_list: res

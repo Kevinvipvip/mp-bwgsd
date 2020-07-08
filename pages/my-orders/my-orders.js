@@ -74,7 +74,7 @@ Page({
       } else {
         let sum;
         for (let i = 0; i < res.length; i++) {
-          app.img_format(res[i].child, 'cover');
+          app.qiniu_format(res[i].child, 'cover');
           switch (res[i].status) {
             case 0:
               res[i].status_text = '待付款';
@@ -94,7 +94,7 @@ Page({
           for (let j = 0; j < res[i].child.length; j++) {
             sum += res[i].child[j].num;
           }
-          
+
           res[i].sum = sum;
         }
         this.setData({ order_list: this.data.order_list.concat(res) });

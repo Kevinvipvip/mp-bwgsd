@@ -58,7 +58,7 @@ Page({
   // 获取首页轮播图
   slideList(complete) {
     app.ajax('api/slideList', null, res => {
-      app.img_format(res);
+      app.qiniu_format(res);
       this.setData({ slide_list: res });
     }, null, () => {
       if (complete) {
@@ -69,7 +69,7 @@ Page({
   // 商品分类列表
   cateList(complete) {
     app.ajax('api/cateList', null, res => {
-      app.img_format(res, 'icon');
+      app.qiniu_format(res, 'icon');
       this.setData({ cate_list: res });
     }, null, () => {
       if (complete) {
@@ -132,7 +132,7 @@ Page({
   goodsList(post, success, complete) {
     app.ajax('api/goodsList', post, res => {
       for (let i = 0; i < res.length; i++) {
-        app.img_format(res[i].pics);
+        app.qiniu_format(res[i].pics);
       }
       success(res);
     }, null, () => {

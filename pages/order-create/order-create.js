@@ -27,7 +27,7 @@ Page({
   // 商品详情
   goodsDetail(complete) {
     app.ajax('api/goodsDetail', { goods_id: this.data.id }, (res) => {
-      app.img_format(res.pics);
+      app.qiniu_format(res.pics);
       res.carriage = Number(res.carriage);
       res.price = Number(res.price);
       res.vip_price = Number(res.vip_price);

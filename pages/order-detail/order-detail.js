@@ -29,7 +29,7 @@ Page({
   // 订单详情
   orderDetail(complete) {
     app.ajax('my/orderDetail', { order_id: this.data.id }, (res) => {
-      app.img_format(res.child, 'cover');
+      app.qiniu_format(res.child, 'cover');
       app.time_format(res, 'pay_time', 'yyyy-MM-dd hh:mm');
       let amount = 0;
       for (let i = 0; i < res.child.length; i++) {

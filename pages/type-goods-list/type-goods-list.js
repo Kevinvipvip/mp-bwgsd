@@ -30,7 +30,7 @@ Page({
 
     app.ajax('api/goodsList', post, res => {
       for (let i = 0; i < res.length; i++) {
-        app.img_format(res[i].pics);
+        app.qiniu_format(res[i].pics);
       }
 
       if (res.length === 0) {

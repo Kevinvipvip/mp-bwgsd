@@ -53,8 +53,8 @@ Page({
     app.ajax('api/goodsDetail', {
       goods_id: this.data.id
     }, (res) => {
-      app.img_format(res.pics);
-      app.img_format(res, 'avatar');
+      app.qiniu_format(res.pics);
+      app.qiniu_format(res, 'avatar');
 
       this.setData({
         goods: res,
@@ -486,7 +486,7 @@ Page({
           });
         }
       } else {
-        app.img_format(res, 'avatar');
+        app.qiniu_format(res, 'avatar');
         app.time_format(res, 'create_time');
         this.setData({
           comment_list: this.data.comment_list.concat(res)

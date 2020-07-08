@@ -31,7 +31,7 @@ Page({
 
     app.ajax('shop/cartList', post, (res) => {
       let cartList = [];
-      app.img_format(res, 'cover');
+      app.qiniu_format(res, 'cover');
       for (let i = 0; i < res.length; i++) {
         if (this.data.ids.indexOf(res[i].id + '') !== -1) {
           cartList.push(res[i]);

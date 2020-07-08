@@ -64,7 +64,7 @@ Page({
   // 商品分类列表
   cateList(complete) {
     app.ajax('api/cateList', null, res => {
-      app.img_format(res, 'icon');
+      app.qiniu_format(res, 'icon');
       this.setData({
         cate_list: res
       });
@@ -78,7 +78,7 @@ Page({
   goodsList(post, complete) {
     app.ajax('api/goodsList', post, res => {
       for (let i = 0; i < res.length; i++) {
-        app.img_format(res[i].pics);
+        app.qiniu_format(res[i].pics);
       }
       if (res.length === 0) {
         this.setData({
@@ -101,7 +101,7 @@ Page({
     app.ajax('api/museumList', post, res => {
       // for (let i = 0; i < res.length; i++) {
       // }
-      app.img_format(res, 'cover');
+      app.qiniu_format(res, 'cover');
       console.log(res)
       if (res.length === 0) {
         this.setData({

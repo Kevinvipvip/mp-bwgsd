@@ -220,7 +220,7 @@ App({
   // 设置一些公共信息
   set_common(complete) {
     this.ajax('my/mydetail', null, res => {
-      this.img_format(res, 'avatar');
+      this.qiniu_format(res, 'avatar');
 
       this.user_data.uid = res.id;
       this.user_data.nickname = res.nickname || '';
